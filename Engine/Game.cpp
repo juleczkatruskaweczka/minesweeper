@@ -39,6 +39,13 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	if (wnd.mouse.LeftIsPressed())
+	{
+		const Vei2 mousePos = wnd.mouse.GetPos();
+		if (field.GetRect().Contains(mousePos))
+		field.RevealClick(mousePos);
+	}
+
 }
 
 void Game::ComposeFrame()
