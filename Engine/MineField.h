@@ -15,6 +15,8 @@ private:
 		void Draw(const Vei2& screenPos, Graphics& gfx) const;
 		void Reveal();
 		bool IsRevealed() const;
+		void ToggleFlag();
+		bool IsFlagged() const;
 	private: 
 		State state = State::Hidden;
 		bool hasBomb = false;
@@ -24,6 +26,7 @@ public:
 	void Draw(Graphics& gfx) const;
 	RectI GetRect() const;
 	void RevealClick(const Vei2& screenPos);
+	void FlagClick(const Vei2& screenPos);
 	Vei2 ScreenToGrid(const Vei2& screenPos);
 private:
 	static constexpr int width = 20;
